@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+/*Configuracion inicial*/
+:root {
+    --very-dark-blue: hsl(233, 47%, 7%);
+    --dark-desaturated-blue: hsl(244, 38%, 16%);
+    --soft-violet: hsl(277, 64%, 61%);
+    --white: hsl(0, 0%, 100%);
+    --transparent-white-1: hsla(0, 0%, 100%, 0.75);
+    --transparent-white-2: hsla(0, 0%, 100%, 0.6);
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {height: 100vh; background: var(--very-dark-blue);}
+p {font-size: 15px; color: var(--transparent-white-2); font-family: 'Lexend Deca', sans-serif; font-weight: 400;}
+h1 {font-size: 2rem; font-family: 'Inter', sans-serif;}
+li {font-size: 15px; list-style: none;}
+
+.statheading, .title {color: var(--white);}
+.data, .imgCard {padding: 4rem; width: 26rem;}
+.card, .stats {display: flex;}
+
+/*Componente principal*/
+
+.card {
+    background: var(--dark-desaturated-blue);
+    border-radius: 0.4rem;
+}
+
+/*Datos*/
+.title {padding-right: 1rem; }
+.title span {color: var(--soft-violet);}
+.information{padding: 1.5rem 3rem 1.5rem 0;} 
+.stats {
+    justify-content: space-between;
+    padding: 2rem 4rem 0rem 0;
+}
+.statheading {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+.statpara {
+    color: var(--transparent-white-2);
+}
+/*Imagen*/
+.imgCard {
+    border-radius: 0 0.4rem 0.4rem 0;
+    background: url("./images/image-header-desktop.jpg"), var(--soft-violet);
+    background-blend-mode: multiply;
+    background-size: 100% 100%;
+}
+
+/*Responsive Design*/
+@media screen and (max-width: 900px) {
+
+    .card {display: block;}
+    .imgCard {display: none;}
+    .data, .imgCardMobile{
+        width: 19rem;
+        padding: 1.5rem;
+    }
+
+    .imgCardMobile {
+        height: 12rem;
+        border-radius: 0.4rem 0.4rem 0 0;
+        background: url("./images/image-header-mobile.jpg"), var(--soft-violet);
+        background-size: 100% 100%;
+        background-blend-mode: multiply;
+    }
+
+    .title {padding: 1rem 0; font-size: 2rem; text-align: center;}
+    .information { text-align: center; padding: 1rem; line-height: 1.3rem;}
+    .stats {display: block; text-align: center; padding: 0;}
+    .stats li {padding: 0.6rem 0;}
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
